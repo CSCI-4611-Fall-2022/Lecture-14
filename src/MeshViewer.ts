@@ -112,12 +112,18 @@ export class MeshViewer extends gfx.GfxApp
     {
         const morphSpeed = 0.75;
 
-        this.morphAlpha += morphSpeed * deltaTime;
+        this.morphAlpha += morphSpeed * this.morphDirection * deltaTime;
+
+        if(this.morphAlpha >= 0 && this.morphAlpha <= 1)
+        {
+            this.character.setMorphAlpha(this.morphAlpha);
+        }
     
-        this.morphAlpha = gfx.MathUtils.clamp(this.morphAlpha, 0, 1);
-
-
-        this.character.setMorphAlpha(this.morphAlpha);
+        if(this.morphAlpha < -0.5 || this.morphAlpha > 1.5)
+        {
+            this.morphDirection *= -1;
+            this.morphAlpha = gfx.MathUtils.clamp(this.morphAlpha, -0.5, 1.5);
+        }
 
         // Update the camera orbit controls
         this.cameraControls.update(deltaTime);
