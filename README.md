@@ -30,6 +30,10 @@ npm run start
 
 Webpack should launch your program in a web browser automatically.  If not, you can run it by pointing your browser at `http://localhost:8080`.
 
+## Acknowledgments
+
+The 3D mesh was originally created by [totidoki](https://sketchfab.com/totidoki) on [SketchFab](https://sketchfab.com/3d-models/link-from-oot-smash-bros-interpretation-1c8c79a9a46a4cc7bcf410ae3ac69a4b).
+
 ## License
 
 Material for [CSCI 4611 Fall 2022](https://csci-4611-fall-2022.github.io) by [Evan Suma Rosenberg](https://illusioneering.umn.edu/) is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
