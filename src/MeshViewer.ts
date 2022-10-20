@@ -111,12 +111,14 @@ export class MeshViewer extends gfx.GfxApp
     update(deltaTime: number): void 
     {
         const morphSpeed = 0.75;
+        const jumpPosition = new gfx.Vector3(0, 0.5, 1);
 
         this.morphAlpha += morphSpeed * this.morphDirection * deltaTime;
 
         if(this.morphAlpha >= 0 && this.morphAlpha <= 1)
         {
             this.character.setMorphAlpha(this.morphAlpha);
+            this.character.position.lerp(gfx.Vector3.ZERO, jumpPosition, this.morphAlpha);
         }
     
         if(this.morphAlpha < -0.5 || this.morphAlpha > 1.5)
