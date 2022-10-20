@@ -34,6 +34,7 @@ export class MeshViewer extends gfx.GfxApp
         this.camera.setPerspectiveCamera(60, 1920/1080, .1, 20)
         this.cameraControls.setTargetPoint(new gfx.Vector3(0, 1, 0));
         this.cameraControls.setDistance(3);
+        this.cameraControls.zoomSpeed = 0.01;
 
         // Set a black background
         this.renderer.background.set(0, 0, 0);
